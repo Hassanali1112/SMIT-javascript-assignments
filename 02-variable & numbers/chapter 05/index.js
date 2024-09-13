@@ -48,9 +48,13 @@
 // document.write("one movie ticket cost is "+ ticketCost+"\nfive movie ticket cost is "+ fiveTicketCost );
 
 // task 05
-// var TableeNumber = prompt("Enter a number for table to be displayed");
-// var sum;
-// sum = TableeNumber *1
+var TableNumber = parseInt(prompt("Enter a number for table to be displayed"));
+var TableRows = parseInt(prompt("Enter the numbers of rows you want to be displayed"));
+var sum = 0;
+for(let i = 1; i< TableRows; i++){
+  sum = TableNumber * i;
+  document.write(TableNumber + " X " + i + " = " + sum + "<br");
+}
 // document.write(TableeNumber + " X 1 = " + sum +",")
 // sum = TableeNumber *2
 // document.write("\n" + TableeNumber + " X 2 = " + sum + ",");
@@ -83,15 +87,39 @@
 // document.write("the converted temperature in celcius is " + temperatureInCelcius);
 
 // task 07
-var item1 = prompt("Enter price of item one in PKR");
-var quantityOFItem1 = prompt("Enter quantity of item one in numbers");
-var totalCostOfItem1 = item1 * quantityOFItem1;
-document.write("total cost of item one " + totalCostOfItem1 + "  in PKR." )
+// var item1 = prompt("Enter price of item one in PKR");
+// var quantityOFItem1 = prompt("Enter quantity of item one in numbers");
+// var totalCostOfItem1 = item1 * quantityOFItem1;
+// document.write("total cost of item one " + totalCostOfItem1 + "  in PKR." )
 
-var item2 = prompt("Enter price of item two in PKR");
-var quantityOFItem2 = prompt("Enter quantity of item two in numbers");
- var totalCostOfItem2 = item2 * quantityOFItem2;
-document.write("total cost of item two is " + totalCostOfItem2 + " in PKR." )
+// var item2 = prompt("Enter price of item two in PKR");
+// var quantityOFItem2 = prompt("Enter quantity of item two in numbers\n");
+//  var totalCostOfItem2 = item2 * quantityOFItem2;
+// document.write("\ntotal cost of item two is " + totalCostOfItem2 + " in PKR." )
 
+// task 08
+// var totalMarks = 900;
+// var obtainedMarks =  850;
+// document.write(totalMarks+ "<br>")
+// document.write(obtainedMarks+ "<br>")
+// document.write((obtainedMarks * 100) / totalMarks);
 
+// task 9
+// let oneDollarInPKR = 104.80;
+// let oneSaudiRiyalInPKR = 28;
 
+// var total =(oneDollarInPKR * 10 + oneSaudiRiyalInPKR * 25);
+// document.write("sum 10 dollar and 25 saudi riyal in pkr is "+ total);
+
+// task 10
+// var newVariable;
+// newVariable = 0;
+// newVariable = ((newVariable + 5) *10)/2
+// console.log(newVariable)
+
+// task 11
+// var currentYear = 2024;
+// var birthYear = 2000;
+// var age = currentYear - birthYear;
+
+// document.write("current year is "+currentYear +" your birth year is "+ birthYear +" Your age is " + age );
