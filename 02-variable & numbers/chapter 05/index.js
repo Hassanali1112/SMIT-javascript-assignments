@@ -48,32 +48,14 @@
 // document.write("one movie ticket cost is "+ ticketCost+"\nfive movie ticket cost is "+ fiveTicketCost );
 
 // task 05
-var TableNumber = parseInt(prompt("Enter a number for table to be displayed"));
-var TableRows = parseInt(prompt("Enter the numbers of rows you want to be displayed"));
-var sum = 0;
-for(let i = 1; i< TableRows; i++){
-  sum = TableNumber * i;
-  document.write(TableNumber + " X " + i + " = " + sum + "<br");
-}
-// document.write(TableeNumber + " X 1 = " + sum +",")
-// sum = TableeNumber *2
-// document.write("\n" + TableeNumber + " X 2 = " + sum + ",");
-// sum = TableeNumber * 3
-// document.write("\n" + TableeNumber + " X 3 = " + sum + ",");
-// sum = TableeNumber * 4
-// document.write("\n" + TableeNumber + " X 4 = " + sum + ",");
-// sum = TableeNumber * 5
-// document.write("\n" + TableeNumber + " X 5 = " + sum + ",");
-// sum = TableeNumber * 6
-// document.write("\n" + TableeNumber + " X 6 = " + sum + ",");
-// sum = TableeNumber * 7
-// document.write("\n" + TableeNumber + " X 7 = " + sum + ",");
-// sum = TableeNumber * 8
-// document.write("\n" + TableeNumber + " X 8 = " + sum + ",");
-// sum = TableeNumber * 9
-// document.write("\n" + TableeNumber + " X 9 = " + sum + ",");
-// sum = TableeNumber * 10
-// document.write("\n" + TableeNumber + " X 10 = " + sum + ",");
+// var TableNumber = parseInt(prompt("Enter a number for table to be displayed"));
+// var TableRows = parseInt(prompt("Enter the numbers of rows you want to be displayed"));
+// var sum = 1;
+// for (let i =1; i<= TableRows; i++){
+//   sum = TableNumber * i;
+//   document.write(TableNumber + " X " + i + " = " + sum+"<br>")
+// }
+
 
 // task 6
 // part (1)
@@ -123,3 +105,21 @@ for(let i = 1; i< TableRows; i++){
 // var age = currentYear - birthYear;
 
 // document.write("current year is "+currentYear +" your birth year is "+ birthYear +" Your age is " + age );
+
+// task 12
+// let circleRadius = 20;
+// let circumference = 2 *(3.142)*circleRadius
+// let circleArea = (3.142)* circleRadius**2
+
+// document.write("The circumference of the circle is " + circumference + " of radius "+ circleRadius);
+
+// document.write("<br>The area of the circle is " + circleArea + " of radius "+ circleRadius);
+
+// task 13
+let snack = "Super";
+let currentAge = 23;
+let maxAge = 65;
+let amountOfSnacksPerDay = 2;
+let totalSnacks = (2 * 365) *65
+let onePackContains = 10
+document.write(" Total pack untill age 65 is "+totalSnacks/onePackContains);
