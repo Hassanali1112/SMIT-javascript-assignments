@@ -41,7 +41,7 @@
 // document.write(myVariable + "\n");
 // myVariable = myVariable % 3;
 // document.write(myVariable + "\n");
- 
+
 // task 04
 // var ticketCost = 600;
 // var fiveTicketCost = ticketCost * 5;
@@ -56,13 +56,12 @@
 //   document.write(TableNumber + " X " + i + " = " + sum+"<br>")
 // }
 
-
 // task 6
 // part (1)
 // var temperatureInCelcius = prompt("Enter temperature in celcius");
 // var temperatureInFahrenheit = (temperatureInCelcius * 9 / 5) + 32;
 // document.write("the converted temperature in Fahrenheit is " + temperatureInFahrenheit);
- 
+
 // part (2)
 // var  temperatureInFahrenheit = prompt("Enter temperature in Fahrenheit");
 // var temperatureInCelcius = (temperatureInFahrenheit - 32 )  * 5 / 9 ;
@@ -117,9 +116,9 @@
 
 // task 13
 let snack = "Super";
-let currentAge = 23;
+let currentAge = 15;
 let maxAge = 65;
-let amountOfSnacksPerDay = 2;
-let totalSnacks = (2 * 365) *65
-let onePackContains = 10
-document.write(" Total pack untill age 65 is "+totalSnacks/onePackContains);
+let remainYear = maxAge - currentAge;
+let amountOfSnacksPerYear = 3;
+let totalSnacks = amountOfSnacksPerYear * remainYear ;
+document.write(" Total pack untill age 65 are " + totalSnacks);
