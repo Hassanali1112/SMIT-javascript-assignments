@@ -241,7 +241,6 @@ let products = [
   },
 ];
 
-
 // task 01
 // git title of products by functions and without function
 // without function
@@ -297,29 +296,38 @@ let products = [
 // Try with function or without function
 // task 03
 // without function
-let totalQuantityOfProduct = [];
-for(let i=0; i < products.length; i++){
-  let sum = 0;
-  for(let j =0; j < products[i].variations.length; j++){
-    sum = sum + products[i].variations[j].quantity
+// let totalQuantityOfProduct = [];
+// for(let i=0; i < products.length; i++){
+//   let sum = 0;
+//   for(let j =0; j < products[i].variations.length; j++){
+//     sum = sum + products[i].variations[j].quantity
 
-  }
-  totalQuantityOfProduct.push(sum);
+//   }
+//   totalQuantityOfProduct.push(sum);
 
-}
-console.log(totalQuantityOfProduct)
-let totalQuantity = 0;
-for(let i=0; i < totalQuantityOfProduct.length; i++){
-  totalQuantity = totalQuantity + totalQuantityOfProduct[i];
+// }
+// console.log(totalQuantityOfProduct)
+// let totalQuantity = 0;
+// for(let i=0; i < totalQuantityOfProduct.length; i++){
+//   totalQuantity = totalQuantity + totalQuantityOfProduct[i];
 
-}
-console.log(totalQuantity);
-
+// }
+// console.log(totalQuantity);
 
 // Exercise 4
 // Get all product reviews where the status is true.
 // Example: [{ review1 }, { review3 }, ...]
 // Try with function or without function
+
+let reviewsWithTrueStatus = [];
+for (let i = 0; i < products.length; i++) {
+  for (let j = 0; j < products[i].reviews.length; j++) {
+    if (products[i].reviews[j].status) {
+      reviewsWithTrueStatus.push(products[i].reviews[j]);
+    }
+  }
+}
+console.log(reviewsWithTrueStatus);
 
 // Exercise 5
 // Find the most expensive variation across all products.
