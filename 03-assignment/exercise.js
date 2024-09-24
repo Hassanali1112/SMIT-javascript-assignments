@@ -243,6 +243,7 @@ let products = [
 
 
 // task 01
+// git title of products by functions and without function
 // without function
 // let productsTitles = [];
 // for(let i =0; i <products.length; i++){
@@ -276,24 +277,44 @@ let products = [
 // console.log(productUniqueColor);
 
 // by function
-function getProductUniqueColor (products){
-  console.log(products)
-  let productUniqueColor = [];
-  for(let i =0; i < products.length; i++){
-    for(let j=0; j < products[i].variations.length; j++){
-      if(!productUniqueColor.includes(products[i].variations[j].color)){
-        productUniqueColor.push(products[i].variations[j].color)
-      }
-    }
-  }
-  console.log(productUniqueColor)
-}
-getProductUniqueColor(products);
+// function getProductUniqueColor (products){
+//   console.log(products)
+//   let productUniqueColor = [];
+//   for(let i =0; i < products.length; i++){
+//     for(let j=0; j < products[i].variations.length; j++){
+//       if(!productUniqueColor.includes(products[i].variations[j].color)){
+//         productUniqueColor.push(products[i].variations[j].color)
+//       }
+//     }
+//   }
+//   console.log(productUniqueColor)
+// }
+// getProductUniqueColor(products);
 
 // Exercise 3
 // Get the total quantity of all products.
 // Example: 23
 // Try with function or without function
+// task 03
+// without function
+let totalQuantityOfProduct = [];
+for(let i=0; i < products.length; i++){
+  let sum = 0;
+  for(let j =0; j < products[i].variations.length; j++){
+    sum = sum + products[i].variations[j].quantity
+
+  }
+  totalQuantityOfProduct.push(sum);
+
+}
+console.log(totalQuantityOfProduct)
+let totalQuantity = 0;
+for(let i=0; i < totalQuantityOfProduct.length; i++){
+  totalQuantity = totalQuantity + totalQuantityOfProduct[i];
+
+}
+console.log(totalQuantity);
+
 
 // Exercise 4
 // Get all product reviews where the status is true.
