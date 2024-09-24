@@ -319,24 +319,70 @@ let products = [
 // Example: [{ review1 }, { review3 }, ...]
 // Try with function or without function
 
-let reviewsWithTrueStatus = [];
-for (let i = 0; i < products.length; i++) {
-  for (let j = 0; j < products[i].reviews.length; j++) {
-    if (products[i].reviews[j].status) {
-      reviewsWithTrueStatus.push(products[i].reviews[j]);
-    }
-  }
-}
-console.log(reviewsWithTrueStatus);
+// let reviewsWithTrueStatus = [];
+// for (let i = 0; i < products.length; i++) {
+//   for (let j = 0; j < products[i].reviews.length; j++) {
+//     if (products[i].reviews[j].status) {
+//       reviewsWithTrueStatus.push(products[i].reviews[j]);
+//     }
+//   }
+// }
+// console.log(reviewsWithTrueStatus);
 
 // Exercise 5
 // Find the most expensive variation across all products.
 // Example: { color: 'silver', price: 55000 }
 // Try with function or without function
+// without function
+// my code
+// let mostExpensiveItems = [];
+
+// for (let i = 0; i < products.length; i++) {
+//   let maxPrice = 0;
+//   for(let j=0; j < products[i].variations.length; j++){
+//     products[i].variations.sort
+
+//   }
+//   }
+
+// let mostExpensiveVariation = null;
+
+// // Loop through all products
+// products.forEach((product) => {
+//   // Loop through each product's variations
+//   product.variations.forEach((variation) => {
+//     // Check if the current variation is more expensive than the previous most expensive one
+//     if (
+//       !mostExpensiveVariation ||
+//       variation.price > mostExpensiveVariation.price
+//     ) {
+//       mostExpensiveVariation = variation;
+//     }
+//   });
+// });
+
+// console.log("The most expensive variation is:", mostExpensiveVariation);
 
 // Exercise 6
 // Get the average rating of all reviews.
 // Example: 4.2
+// debugger
+let totalRatings = [];
+for (let i = 0; i < products.length; i++) {
+  let sum = 0;
+  for (let j = 0; j < products[i].reviews.length; j++) {
+    sum = sum + products[i].reviews[j].rating;
+  }
+  totalRatings.push(sum / products[i].reviews.length);
+}
+console.log(totalRatings)
+let newSum = 0;
+for(let i =0; i < totalRatings.length; i++){
+  newSum += totalRatings[i];
+}
+let averageRatings = newSum / totalRatings.length 
+console.log("final average ratings is "+averageRatings)
+
 
 // Exercise 7
 // find a Product by id if not found return empty object
