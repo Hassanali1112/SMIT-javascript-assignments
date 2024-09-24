@@ -367,23 +367,34 @@ let products = [
 // Get the average rating of all reviews.
 // Example: 4.2
 // debugger
-let totalRatings = [];
-for (let i = 0; i < products.length; i++) {
-  let sum = 0;
-  for (let j = 0; j < products[i].reviews.length; j++) {
-    sum = sum + products[i].reviews[j].rating;
-  }
-  totalRatings.push(sum / products[i].reviews.length);
-}
-console.log(totalRatings)
-let newSum = 0;
-for(let i =0; i < totalRatings.length; i++){
-  newSum += totalRatings[i];
-}
-let averageRatings = newSum / totalRatings.length 
-console.log("final average ratings is "+averageRatings)
+// let totalRatings = [];
+// for (let i = 0; i < products.length; i++) {
+//   let sum = 0;
+//   for (let j = 0; j < products[i].reviews.length; j++) {
+//     sum = sum + products[i].reviews[j].rating;
+//   }
+//   totalRatings.push(sum / products[i].reviews.length);
+// }
+// console.log(totalRatings)
+// let newSum = 0;
+// for(let i =0; i < totalRatings.length; i++){
+//   newSum += totalRatings[i];
+// }
+// let averageRatings = newSum / totalRatings.length 
+// console.log("final average ratings is "+averageRatings)
 
 
 // Exercise 7
 // find a Product by id if not found return empty object
 // Example: {...}
+let userEnteredId = parseInt(prompt("enter a id to find that item"));
+for(let i =0; i < products.length; i++){
+  if(products[i].id === userEnteredId){
+    console.log(products[i])
+    break;
+  } else {
+    console.log("Item not found",{})
+    break;
+  } 
+
+}
