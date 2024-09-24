@@ -241,11 +241,7 @@ let products = [
   },
 ];
 
-// Exercise 1
-// Get all product titles and display them in array format.
-// Example: ['Sony LED 40 inch', 'Mobile', 'Bike']
-// Try with function or without function
- 
+
 // task 01
 // without function
 // let productsTitles = [];
@@ -254,19 +250,45 @@ let products = [
 // }
 // console.log(productsTitles)
 // by function
-function productsTitles (products){
-  let productsTitle = [];
-  for(let i =0; i < products.length; i++){
-    productsTitle.push(products[i].title)
-  }
-  return productsTitle;
-}
-console.log(productsTitles(products))
+// function productsTitles (products){
+//   let productsTitle = [];
+//   for(let i =0; i < products.length; i++){
+//     productsTitle.push(products[i].title)
+//   }
+//   return productsTitle;
+// }
+// console.log(productsTitles(products))
 
 // Exercise 2
 // Get all the unique colors from the product variations.
 // Example: ['black', 'red', 'silver']
 // Try with function or without function
+// task 02
+// without function
+// let productUniqueColor = [];
+// for(let i=0; i < products.length; i++){
+//   for(let j = 0; j < products[i].variations.length; j++){
+//     if(!productUniqueColor.includes(products[i].variations[j].color)){
+//       productUniqueColor.push(products[i].variations[j].color)
+//     }
+//   }
+// }
+// console.log(productUniqueColor);
+
+// by function
+function getProductUniqueColor (products){
+  console.log(products)
+  let productUniqueColor = [];
+  for(let i =0; i < products.length; i++){
+    for(let j=0; j < products[i].variations.length; j++){
+      if(!productUniqueColor.includes(products[i].variations[j].color)){
+        productUniqueColor.push(products[i].variations[j].color)
+      }
+    }
+  }
+  console.log(productUniqueColor)
+}
+getProductUniqueColor(products);
 
 // Exercise 3
 // Get the total quantity of all products.
