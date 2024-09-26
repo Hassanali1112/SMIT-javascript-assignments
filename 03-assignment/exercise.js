@@ -290,6 +290,22 @@ let products = [
 // }
 // getProductUniqueColor(products);
 
+// new aprouch for task 02
+function getUniqueColors(products){
+  let colors= [];
+  for(let i=0; i < products.length; i++){
+    for(let j=0; j < products[i].variations.length; j++){
+      let color = products[i].variations[j].color;
+      // console.log(color);
+      if(colors.indexOf(color) === -1){
+        colors.push(color);
+      }
+    }
+  }
+  return colors;
+}
+console.log(getUniqueColors(products))
+// console.log(allUniqueColors)
 // Exercise 3
 // Get the total quantity of all products.
 // Example: 23
@@ -387,14 +403,14 @@ let products = [
 // Exercise 7
 // find a Product by id if not found return empty object
 // Example: {...}
-let userEnteredId = parseInt(prompt("enter a id to find that item"));
-for(let i =0; i < products.length; i++){
-  if(products[i].id === userEnteredId){
-    console.log(products[i])
-    break;
-  } else {
-    console.log("Item not found",{})
-    break;
-  } 
+// let userEnteredId = parseInt(prompt("enter a id to find that item"));
+// for(let i =0; i < products.length; i++){
+//   if(products[i].id === userEnteredId){
+//     console.log(products[i])
+//     break;
+//   } else {
+//     console.log("Item not found",{})
+//     break;
+//   } 
 
-}
+// }
