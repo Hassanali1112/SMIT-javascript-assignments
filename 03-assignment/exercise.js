@@ -242,7 +242,7 @@ let products = [
 ];
 
 // task 01
-// git title of products by functions and without function
+// get title of products by functions and without function
 // without function
 // let productsTitles = [];
 // for(let i =0; i <products.length; i++){
@@ -289,8 +289,20 @@ let products = [
 //   console.log(productUniqueColor)
 // }
 // getProductUniqueColor(products);
-
-// Exercise 3
+function getUniqueColor (products){
+  let colors =[];
+  for(let i=0; i < products.length; i++){
+    for(let j=0; j < products[i].variations.length; j++){
+      let color = products[i].variations[j].color;
+      if(colors.indexOf(color)=== -1){
+        colors.push(color)
+      }
+    }
+  }
+  return colors;
+}
+let uniqueColors = getUniqueColor(products);
+console.log(uniqueColors)
 // Get the total quantity of all products.
 // Example: 23
 // Try with function or without function
@@ -387,14 +399,14 @@ let products = [
 // Exercise 7
 // find a Product by id if not found return empty object
 // Example: {...}
-let userEnteredId = parseInt(prompt("enter a id to find that item"));
-for(let i =0; i < products.length; i++){
-  if(products[i].id === userEnteredId){
-    console.log(products[i])
-    break;
-  } else {
-    console.log("Item not found",{})
-    break;
-  } 
+// let userEnteredId = parseInt(prompt("enter a id to find that item"));
+// for(let i =0; i < products.length; i++){
+//   if(products[i].id === userEnteredId){
+//     console.log(products[i])
+//     break;
+//   } else {
+//     console.log("Item not found",{})
+//     break;
+//   } 
 
-}
+// }
