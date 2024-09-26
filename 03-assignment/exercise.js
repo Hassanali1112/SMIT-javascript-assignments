@@ -291,20 +291,20 @@ let products = [
 // getProductUniqueColor(products);
 
 // new aprouch for task 02
-function getUniqueColors(products){
-  let colors= [];
-  for(let i=0; i < products.length; i++){
-    for(let j=0; j < products[i].variations.length; j++){
-      let color = products[i].variations[j].color;
-      // console.log(color);
-      if(colors.indexOf(color) === -1){
-        colors.push(color);
-      }
-    }
-  }
-  return colors;
-}
-console.log(getUniqueColors(products))
+// function getUniqueColors(products){
+//   let colors= [];
+//   for(let i=0; i < products.length; i++){
+//     for(let j=0; j < products[i].variations.length; j++){
+//       let color = products[i].variations[j].color;
+//       // console.log(color);
+//       if(colors.indexOf(color) === -1){
+//         colors.push(color);
+//       }
+//     }
+//   }
+//   return colors;
+// }
+// console.log(getUniqueColors(products))
 // console.log(allUniqueColors)
 // Exercise 3
 // Get the total quantity of all products.
@@ -351,15 +351,23 @@ console.log(getUniqueColors(products))
 // Try with function or without function
 // without function
 // my code
-// let mostExpensiveItems = [];
-
-// for (let i = 0; i < products.length; i++) {
-//   let maxPrice = 0;
-//   for(let j=0; j < products[i].variations.length; j++){
-//     products[i].variations.sort
-
-//   }
-//   }
+function getMostExpVariation(products){
+  // debugger
+  let mostExpensiveItems = [];
+  let maxPrice = null;
+  for (let i = 0; i < products.length; i++) {
+    for (let j = 0; j < products[i].variations.length; j++) {
+      if(maxPrice === null || products[i].variations[j].price > maxPrice ){
+        maxPrice = products[i].variations[j].price;
+        if(maxPrice=== 75000){
+          mostExpensiveItems.push(products[i].variations[j]);
+        }
+      }
+    }
+  }
+  return mostExpensiveItems;
+}
+console.log(getMostExpVariation(products))
 
 // let mostExpensiveVariation = null;
 
