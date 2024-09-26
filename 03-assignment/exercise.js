@@ -351,25 +351,23 @@ let products = [
 // Try with function or without function
 // without function
 // my code
-function getMostExpVariation(products){
-  // debugger
-  let mostExpensiveItems = [];
-  let maxPrice = null;
-  for (let i = 0; i < products.length; i++) {
-    for (let j = 0; j < products[i].variations.length; j++) {
-      if(maxPrice === null || products[i].variations[j].price > maxPrice ){
-        maxPrice = products[i].variations[j].price;
-        if(maxPrice=== 75000){
-          mostExpensiveItems.push(products[i].variations[j]);
-        }
-      }
-    }
-  }
-  return mostExpensiveItems;
-}
-console.log(getMostExpVariation(products))
-
-// let mostExpensiveVariation = null;
+// function getMostExpVariation(products){
+//   // debugger
+//   let mostExpensiveItems = [];
+//   let maxPrice = null;
+//   for (let i = 0; i < products.length; i++) {
+//     for (let j = 0; j < products[i].variations.length; j++) {
+//       if(maxPrice === null || products[i].variations[j].price > maxPrice ){
+//         maxPrice = products[i].variations[j].price;
+//         if(maxPrice=== 75000){
+//           mostExpensiveItems.push(products[i].variations[j]);
+//         }
+//       }
+//     }
+//   }
+//   return mostExpensiveItems;
+// }
+// console.log(getMostExpVariation(products))
 
 // // Loop through all products
 // products.forEach((product) => {
@@ -404,9 +402,8 @@ console.log(getMostExpVariation(products))
 // for(let i =0; i < totalRatings.length; i++){
 //   newSum += totalRatings[i];
 // }
-// let averageRatings = newSum / totalRatings.length 
+// let averageRatings = newSum / totalRatings.length
 // console.log("final average ratings is "+averageRatings)
-
 
 // Exercise 7
 // find a Product by id if not found return empty object
@@ -419,6 +416,15 @@ console.log(getMostExpVariation(products))
 //   } else {
 //     console.log("Item not found",{})
 //     break;
-//   } 
+//   }
 
 // }
+function getProductById(products, productId) {
+  for (let i = 0; i < products.length; i++) {
+    if (products[i].id === productId) {
+      return products[i];
+    }
+  }
+  return "id not found {...}";
+}
+console.log(getProductById(products, 106));
