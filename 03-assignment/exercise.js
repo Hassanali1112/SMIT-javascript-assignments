@@ -306,6 +306,25 @@ let products = [
 // }
 // console.log(getUniqueColors(products))
 // console.log(allUniqueColors)
+                // Get all the unique colors from the product variations.
+// function getUniqueColors(products){
+//   let colors = [];
+//   for(let i=0; i < products.length; i++){
+//     debugger
+//     for(let j=0; j <products[i].variations.length; j++){
+//       let color = products[i].variations(j).color;
+//       for(let k=0; k < colors.length; k++){
+//         if(colors[k].color === products[i].variations[j].color){
+//           colors.push(products[i].variations[j].color)
+//         }
+//       }
+
+//     }
+//   }
+//   return colors;
+// }
+// console.log(getUniqueColors(products))
+
 // Exercise 3
 // Get the total quantity of all products.
 // Example: 23
@@ -405,6 +424,24 @@ let products = [
 // let averageRatings = newSum / totalRatings.length
 // console.log("final average ratings is "+averageRatings)
 
+function getNetAverageRatings (products){
+  let totalRatings = 0;
+  let sum = 0;
+  for(let i=0; i < products.length; i++){
+    for(let j=0; j < products[i].reviews.length; j++){
+      sum += products[i].reviews[j].rating;
+      totalRatings++;
+
+    }
+  }
+  console.log(sum)
+  console.log(totalRatings)
+  return sum / totalRatings;
+}
+console.log(getNetAverageRatings(products))
+
+
+
 // Exercise 7
 // find a Product by id if not found return empty object
 // Example: {...}
@@ -419,12 +456,12 @@ let products = [
 //   }
 
 // }
-function getProductById(products, productId) {
-  for (let i = 0; i < products.length; i++) {
-    if (products[i].id === productId) {
-      return products[i];
-    }
-  }
-  return "id not found {...}";
-}
-console.log(getProductById(products, 106));
+// function getProductById(products, productId) {
+//   for (let i = 0; i < products.length; i++) {
+//     if (products[i].id === productId) {
+//       return products[i];
+//     }
+//   }
+//   return "id not found {...}";
+// }
+// console.log(getProductById(products, 106));
