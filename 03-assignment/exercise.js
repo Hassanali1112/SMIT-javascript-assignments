@@ -306,7 +306,7 @@ let products = [
 // }
 // console.log(getUniqueColors(products))
 // console.log(allUniqueColors)
-                // Get all the unique colors from the product variations.
+// Get all the unique colors from the product variations.
 // function getUniqueColors(products){
 //   let colors = [];
 //   for(let i=0; i < products.length; i++){
@@ -368,6 +368,20 @@ let products = [
 // Find the most expensive variation across all products.
 // Example: { color: 'silver', price: 55000 }
 // Try with function or without function
+function getMostExpensiveVariation(products) {
+  // debugger
+  let maxPrice = null;
+  for (let i = 0; i < products.length; i++) {
+    for (let j = 0; j < products[i].variations.length; j++) {
+      if ( maxPrice === null || products[i].variations[j].price > maxPrice.price) {
+        maxPrice = products[i].variations[j] ;
+      }
+    }
+  }
+  return maxPrice;
+}
+
+console.log(getMostExpensiveVariation(products));
 // without function
 // my code
 // function getMostExpVariation(products){
@@ -424,23 +438,21 @@ let products = [
 // let averageRatings = newSum / totalRatings.length
 // console.log("final average ratings is "+averageRatings)
 
-function getNetAverageRatings (products){
-  let totalRatings = 0;
-  let sum = 0;
-  for(let i=0; i < products.length; i++){
-    for(let j=0; j < products[i].reviews.length; j++){
-      sum += products[i].reviews[j].rating;
-      totalRatings++;
+// function getNetAverageRatings (products){
+//   let totalRatings = 0;
+//   let sum = 0;
+//   for(let i=0; i < products.length; i++){
+//     for(let j=0; j < products[i].reviews.length; j++){
+//       sum += products[i].reviews[j].rating;
+//       totalRatings++;
 
-    }
-  }
-  console.log(sum)
-  console.log(totalRatings)
-  return sum / totalRatings;
-}
-console.log(getNetAverageRatings(products))
-
-
+//     }
+//   }
+//   console.log(sum)
+//   console.log(totalRatings)
+//   return sum / totalRatings;
+// }
+// console.log(getNetAverageRatings(products))
 
 // Exercise 7
 // find a Product by id if not found return empty object
