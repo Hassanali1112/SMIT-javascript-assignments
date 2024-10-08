@@ -7,25 +7,27 @@
 </head>
 <link rel="stylesheet" href="style.css">
 <body>
-  <div class="container">
-    <div class="image"></div>
+  <div class="container" id="container">
+    <div class="image">
+      <img id="image" src="./images/profile.jpg" alt="">
+    </div>
     <div class="details">
-      <h2 class="heading">John Doe</h2>
-      <p class="profession">Web Developer</p>
+      <h2 class="heading" id="heading">John Doe</h2>
+      <p class="profession" id="profession">Web Developer</p>
     </div>
     <div class="input-container">
-      <input type="text" class="input" placeholder="write any thing" id="">
+      <input type="text" class="input" id="input" placeholder="write a value to be changed" id="">
     </div>
     <div class="btn-row">
-      <button>Change Name</button>
-      <button>Change profession</button>
+      <button id="name_change">Change Name</button>
+      <button id="profe_change">Change profession</button>
     </div>
     <div class="btn-row">
-        <button>Change Picture</button>
-        <button>Change Background</button>
+        <button id="img_change">Change Picture</button>
+        <button id="bg_change">Change Background</button>
     </div>
     <div class="btn-row">
-      <button>Reset Default</button>
+      <button id="reset">Reset Default</button>
     </div>
 
   </div>

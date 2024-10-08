@@ -2,6 +2,7 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  font-family: sans-serif;
 }
 body{
   background: radial-gradient(white,rgba(0, 0, 0, 0.401)) ;
@@ -25,19 +26,43 @@ body{
   height: 175px;
   border-radius: 50%;
   border: 1px solid black;
+
+  overflow: hidden;
 }
+.image img{
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: top;
+}
+.details{
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  font-size: 1.2rem;
+  align-items: center;
+  text-transform: uppercase;
+}
+.profession{
+  font-size: 1.1rem;
+  font-weight: 500;
+}
+
 .input-container{
   width: 65%;
-  height: 40px;
+  height: 35px;
   border: 1px solid black;
-  font-size: 1.5rem;
+  font-size: 1.2rem;
+  border-radius: 8px;
+  overflow: hidden;
 }
 .input{
   width: 100%;
   height: 100%;
   padding: 5px;
   border: none;
-  outline: none;
+  background-color: #aba27bd3;
+ 
 }
 .btn-row{
     padding: 4px;
@@ -46,8 +71,13 @@ body{
     justify-content: space-between;
 }
 .btn-row button{
-  width: 45%;
+  width: 47%;
   height: 30px;
+  font-size: .9rem;
+  text-transform: capitalize;
+  border-radius: 8px;
+  border: 1px solid rgba(0, 0, 0, 0.512);
+  background-color: #ABA27B;
 }
 .btn-row:nth-last-child(1){
   justify-content: center;
