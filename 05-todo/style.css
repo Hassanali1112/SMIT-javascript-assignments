@@ -69,6 +69,15 @@ body{
   text-transform: capitalize;
   background: rgba(196, 175, 175, 0.5) ;
 }
+.text{
+  width: fit-content;
+  padding: 0 10px;
+  border: 1px solid black;
+}
+.btns{
+  display: flex;
+  column-gap: 3px;
+}
 .edit, .remove , .done{
   background-color: #f9d32c;
   padding: 5px 10px;
