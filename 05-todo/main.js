@@ -1,36 +1,50 @@
 const inputElem = document.querySelector(".inputElem");
-const addBtn = document.querySelector(".add-btn");
+const form = document.querySelector(".new-todo");
 const todoWrapper = document.querySelector(".todo-wrapper");
-addBtn.addEventListener("click", function () {
+const todoItem = document.querySelectorAll(".item");
+form.addEventListener("submit", function (e) {
+  e.preventDefault();
   let newTodo = document.createElement("li");
   newTodo.classList.add("item");
+  todoContext = `<div class="text">${inputElem.value}</div>
+            <div class="btns">
+              <button class="edit">Edit</button>
+              <button class="remove">Delete</button>
+              <button class="done">Done</button>
+            </div>`;
+  newTodo.innerHTML = todoContext;
   todoWrapper.appendChild(newTodo);
-  // text Element
-  newTextElem = document.createElement("div");
-  newTextElem.classList.add("text");
-  newTextElem.setAttribute("contenteditable", "");
-  newTextElem.textContent = inputElem.value;
-  newTodo.appendChild(newTextElem);
-  // btn container with three buttons
-  newBtnWrapper = document.createElement("div");
-  newBtnWrapper.classList.add("btns");
-  newTodo.appendChild(newBtnWrapper);
-// three buttons
-// edit
-let editBtn = document.createElement("button")
-editBtn.classList.add("edit"); 
-editBtn.textContent = "Edit";
-newBtnWrapper.appendChild(editBtn)
-// delete btn
-let deleteBtn = document.createElement("button")
-deleteBtn.classList.add("remove");
-deleteBtn.textContent = "Delete";
-newBtnWrapper.appendChild(deleteBtn)
-// done btn
-let doneBtn = document.createElement("button")
-doneBtn.classList.add("done");
-doneBtn.textContent = "Done";
-newBtnWrapper.appendChild(doneBtn)
+  console.log(todoWrapper);
 
-  console.log(newTodo);
+  inputElem.value = "";
+});
+todoWrapper.addEventListener("click", function (e) {
+  if (e.target.classList.contains("remove")) {
+    e.target.parentNode.parentNode.remove();
+  }
+  
+  if(e.target.parentNode.parentNode.children[0].classList.contains("cut")){
+    e.target.parentNode.parentNode.children[0].classList.remove("cut")
+   
+  }
+  if (e.target.classList.contains("done")) {
+    e.target.parentNode.parentNode.children[0].classList.add("cut");
+  }
+  if (e.target.classList.contains("edit")) {
+    e.target.parentNode.parentNode.children[0].setAttribute(
+      "contenteditable",
+      ""
+    );
+    e.target.parentNode.parentNode.children[0].textContent = "";
+    e.target.parentNode.parentNode.children[0].focus();
+    e.target.parentNode.parentNode.children[0].addEventListener(
+      "blur",
+      function (e) {
+        e.target.parentNode.parentNode.children[0].removeAttribute(
+          "contenteditable"
+        );
+        e.target.parentNode.parentNode.children[0].textContent;
+      }
+    );
+  }
 });
