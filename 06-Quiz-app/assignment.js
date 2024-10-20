@@ -10,15 +10,15 @@ parentElem.addEventListener("click", function (e){
   e.preventDefault();
   NumberOfClicks++;
   if(e.target.classList.contains("correct")){
-    // e.target.parentElement.style.display = "none";
-    e.target.parentElement.parentElement.classList.add("filtered");
+     e.target.parentElement.parentElement.style.display = "none";
+    console.log(e.target.parentElement.parentElement)
     score++;
     correctAns.textContent = score;
 
   } else {
     wrong++;
-     e.target.parentElement.parentElement.classList.add("filtered");
-    e.target.style.backGroundColor = "red"
+     e.target.parentElement.parentElement.style.display = "none";
+       console.log(e.target.parentElement.parentElement);
     wrongAns.textContent = wrong;
   }
   if (NumberOfClicks === parentElem.children.length) {
