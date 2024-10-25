@@ -289,20 +289,8 @@ let products = [
 //   console.log(productUniqueColor)
 // }
 // getProductUniqueColor(products);
-function getUniqueColor (products){
-  let colors =[];
-  for(let i=0; i < products.length; i++){
-    for(let j=0; j < products[i].variations.length; j++){
-      let color = products[i].variations[j].color;
-      if(colors.indexOf(color)=== -1){
-        colors.push(color)
-      }
-    }
-  }
-  return colors;
-}
-let uniqueColors = getUniqueColor(products);
-console.log(uniqueColors)
+
+// Exercise 3
 // Get the total quantity of all products.
 // Example: 23
 // Try with function or without function
@@ -345,19 +333,39 @@ console.log(uniqueColors)
 // Find the most expensive variation across all products.
 // Example: { color: 'silver', price: 55000 }
 // Try with function or without function
+function getMostExpensiveVariation(products) {
+  // debugger
+  let maxPrice = null;
+  for (let i = 0; i < products.length; i++) {
+    for (let j = 0; j < products[i].variations.length; j++) {
+      if ( maxPrice === null || products[i].variations[j].price > maxPrice.price) {
+        maxPrice = products[i].variations[j] ;
+      }
+    }
+  }
+  return maxPrice;
+}
+
+console.log(getMostExpensiveVariation(products));
 // without function
 // my code
-// let mostExpensiveItems = [];
-
-// for (let i = 0; i < products.length; i++) {
-//   let maxPrice = 0;
-//   for(let j=0; j < products[i].variations.length; j++){
-//     products[i].variations.sort
-
+// function getMostExpVariation(products){
+//   // debugger
+//   let mostExpensiveItems = [];
+//   let maxPrice = null;
+//   for (let i = 0; i < products.length; i++) {
+//     for (let j = 0; j < products[i].variations.length; j++) {
+//       if(maxPrice === null || products[i].variations[j].price > maxPrice ){
+//         maxPrice = products[i].variations[j].price;
+//         if(maxPrice=== 75000){
+//           mostExpensiveItems.push(products[i].variations[j]);
+//         }
+//       }
+//     }
 //   }
-//   }
-
-// let mostExpensiveVariation = null;
+//   return mostExpensiveItems;
+// }
+// console.log(getMostExpVariation(products))
 
 // // Loop through all products
 // products.forEach((product) => {
@@ -392,21 +400,36 @@ console.log(uniqueColors)
 // for(let i =0; i < totalRatings.length; i++){
 //   newSum += totalRatings[i];
 // }
-// let averageRatings = newSum / totalRatings.length 
+// let averageRatings = newSum / totalRatings.length
 // console.log("final average ratings is "+averageRatings)
 
+// function getNetAverageRatings (products){
+//   let totalRatings = 0;
+//   let sum = 0;
+//   for(let i=0; i < products.length; i++){
+//     for(let j=0; j < products[i].reviews.length; j++){
+//       sum += products[i].reviews[j].rating;
+//       totalRatings++;
+
+//     }
+//   }
+//   console.log(sum)
+//   console.log(totalRatings)
+//   return sum / totalRatings;
+// }
+// console.log(getNetAverageRatings(products))
 
 // Exercise 7
 // find a Product by id if not found return empty object
 // Example: {...}
-// let userEnteredId = parseInt(prompt("enter a id to find that item"));
-// for(let i =0; i < products.length; i++){
-//   if(products[i].id === userEnteredId){
-//     console.log(products[i])
-//     break;
-//   } else {
-//     console.log("Item not found",{})
-//     break;
-//   } 
+let userEnteredId = parseInt(prompt("enter a id to find that item"));
+for(let i =0; i < products.length; i++){
+  if(products[i].id === userEnteredId){
+    console.log(products[i])
+    break;
+  } else {
+    console.log("Item not found",{})
+    break;
+  } 
 
-// }
+}
