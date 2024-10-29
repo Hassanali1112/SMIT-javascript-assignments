@@ -13,14 +13,25 @@ body{
     align-items: center;
     color: rgb(44, 43, 43);
 }
+.container{
+    box-shadow: 0px 0px 10px 0px black;
+    padding: 2rem;
+    border-radius: 8px;
+
+}
 .display{
     font-size: 5rem;
     font-weight: 700;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: .5rem;
 }
 .text{
     font-size: 1.2rem;
     text-transform: capitalize;
-
+    margin-top: 1.5rem;
 }
 .btn-container{
     text-align: center;
@@ -34,8 +45,8 @@ body{
     background-color: rgb(28, 126, 28);
     border: 0px;
     margin: .7rem;
-    cursor: pointer;transition: all 0.3s;
-
+    cursor: pointer;
+    transition: all 0.3s;
 }
 .btn:hover{
     transform: translate(0,-5px);
@@ -45,4 +56,22 @@ body{
 }
 .btn:nth-child(3){
     background-color: rgb(245, 37, 37);
+}
+
+@media screen and (max-width : 500px) {
+    .container{
+        padding: .8rem;
+    }
+    .display{
+        font-size: 2rem;
+    }
+    .text{
+        font-size: .7rem;
+        align-self: flex-end;
+    }
+    .btn{
+        padding: 8px 1rem;
+        font-size: .8rem;
+        margin: .3rem;
+    }
 }
