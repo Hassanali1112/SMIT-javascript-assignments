@@ -243,6 +243,8 @@ let products = [
 
 // task 01
 // get title of products by functions and without function
+let titles = products.map(item => item.title)
+console.log(titles)
 // without function
 // let productsTitles = [];
 // for(let i =0; i <products.length; i++){
@@ -333,20 +335,20 @@ let products = [
 // Find the most expensive variation across all products.
 // Example: { color: 'silver', price: 55000 }
 // Try with function or without function
-function getMostExpensiveVariation(products) {
-  // debugger
-  let maxPrice = null;
-  for (let i = 0; i < products.length; i++) {
-    for (let j = 0; j < products[i].variations.length; j++) {
-      if ( maxPrice === null || products[i].variations[j].price > maxPrice.price) {
-        maxPrice = products[i].variations[j] ;
-      }
-    }
-  }
-  return maxPrice;
-}
+// function getMostExpensiveVariation(products) {
+//   // debugger
+//   let maxPrice = null;
+//   for (let i = 0; i < products.length; i++) {
+//     for (let j = 0; j < products[i].variations.length; j++) {
+//       if ( maxPrice === null || products[i].variations[j].price > maxPrice.price) {
+//         maxPrice = products[i].variations[j] ;
+//       }
+//     }
+//   }
+//   return maxPrice;
+// }
 
-console.log(getMostExpensiveVariation(products));
+// console.log(getMostExpensiveVariation(products));
 // without function
 // my code
 // function getMostExpVariation(products){
@@ -422,14 +424,14 @@ console.log(getMostExpensiveVariation(products));
 // Exercise 7
 // find a Product by id if not found return empty object
 // Example: {...}
-let userEnteredId = parseInt(prompt("enter a id to find that item"));
-for(let i =0; i < products.length; i++){
-  if(products[i].id === userEnteredId){
-    console.log(products[i])
-    break;
-  } else {
-    console.log("Item not found",{})
-    break;
-  } 
+// let userEnteredId = parseInt(prompt("enter a id to find that item"));
+// for(let i =0; i < products.length; i++){
+//   if(products[i].id === userEnteredId){
+//     console.log(products[i])
+//     break;
+//   } else {
+//     console.log("Item not found",{})
+//     break;
+//   } 
 
-}
+// }
