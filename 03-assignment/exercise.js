@@ -244,7 +244,25 @@ let products = [
 // task 01
 // get title of products by functions and without function
 let titles = products.map(item => item.title)
-console.log(titles)
+// console.log(titles)
+// Exercise 2
+// Get all the unique colors from the product variations.
+// let colors = products.map(product => product.variations.map(variation => variation.color)).reduce((acc,color) => acc.concat(color));
+// let uniqueColors = colors.filter((color,index)=> colors.indexOf(color) === index)
+// console.log(colors)
+// console.log(uniqueColors)
+
+let colors = products.flatMap(product => product.variations.map(variation => variation.color));
+console.log(colors)
+let uniquColors = [ ... new Set(colors)];
+console.log(uniquColors)
+
+
+
+// let colors = products.map(item => item.variations.map(variation => variation.color)).reduce((acc,color)=>acc.concat(color),[]);
+// console.log(colors)
+// let uniquColors = colors.filter((color,index) => colors.indexOf(color) === index);
+// console.log(uniquColors)
 // without function
 // let productsTitles = [];
 // for(let i =0; i <products.length; i++){
@@ -263,6 +281,7 @@ console.log(titles)
 
 // Exercise 2
 // Get all the unique colors from the product variations.
+
 // Example: ['black', 'red', 'silver']
 // Try with function or without function
 // task 02
