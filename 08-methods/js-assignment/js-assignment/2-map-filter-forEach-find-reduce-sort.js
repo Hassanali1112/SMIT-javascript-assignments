@@ -6,7 +6,6 @@ let marks = [90, 80, 65, 40, 75, 30, 25, 15];
 // 1- Print all the numbers greater then 40 in asc order using map
 
 
-
 // 2- Find all the students having number equal to 70. 
 
 
