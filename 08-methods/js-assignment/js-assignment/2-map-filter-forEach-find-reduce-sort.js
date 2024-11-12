@@ -12,8 +12,7 @@ let marksEqual70 = marks.filter(mark => mark === 70 )
 console.log(marksEqual70)
 
 // 3- Find all the numbers less then 40 using filter function.
-
-
-
+let marksLess40 = marks.filter(mark => mark < 40)
+console.log(marksLess40)
 // 4- Using forEach function display only fail students.
 
