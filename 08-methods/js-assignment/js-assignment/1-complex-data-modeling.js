@@ -119,7 +119,7 @@ minVar = (product)=>{
   return minVari;
 }
 let minVariations = products.map(minVar);
-console.log(minVariations)
+// console.log(minVariations)
 
 
 // sample output
@@ -130,6 +130,10 @@ console.log(minVariations)
 // ]
 
 // 2- Count the number of reviews on each product.
+let numOfReviews = 0;
+products.forEach(product => {
+  console.log(`Product : ${product.title}, Number of Reviews : ${product.reviews.length} `)
+} )
 
 // 3- Count the average rating of each product.
 
