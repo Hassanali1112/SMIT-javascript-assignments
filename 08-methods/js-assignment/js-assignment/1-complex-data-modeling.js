@@ -109,6 +109,18 @@ let products = [
 
 // 1- For each product print the variation having minimum
 // Find the variation with the minimum price for each product
+minVar = (product)=>{
+  let minVari = product.varations[0];
+  product.varations.forEach(element => {
+    if(element.price < minVari.price){
+      minVari = element;
+    }
+  });
+  return minVari;
+}
+let minVariations = products.map(minVar);
+console.log(minVariations)
+
 
 // sample output
 // [
