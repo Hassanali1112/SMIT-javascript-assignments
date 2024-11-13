@@ -132,10 +132,18 @@ let minVariations = products.map(minVar);
 // 2- Count the number of reviews on each product.
 let numOfReviews = 0;
 products.forEach(product => {
-  console.log(`Product : ${product.title}, Number of Reviews : ${product.reviews.length} `)
+  // console.log(`Product : ${product.title}, Number of Reviews : ${product.reviews.length} `)
 } )
 
 // 3- Count the average rating of each product.
+let aveRatings = (product) =>{
+  let sumReviews = 0;
+  product.reviews.forEach(rev => sumReviews += rev.rating)
+  return (sumReviews/product.reviews.length)
+}
+let ave = products.map(aveRatings)
+console.log(ave)
+
 
 // 4- In each product show reviews that need to be moderated (status = false) along with id and title only
 // meanseach product will have id, title and array of unmoderated reviews.
