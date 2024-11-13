@@ -142,13 +142,25 @@ let aveRatings = (product) =>{
   return (sumReviews/product.reviews.length)
 }
 let ave = products.map(aveRatings)
-console.log(ave)
+// console.log(ave)
 
 
 // 4- In each product show reviews that need to be moderated (status = false) along with id and title only
 // meanseach product will have id, title and array of unmoderated reviews.
-
+let moderatedReview = (product)=>{
+  // console.log(product)
+  product.reviews.forEach(elem =>{
+    if(!elem.status){
+     return {elem.id,title, reviews}
+    }
+  })
+ 
+}
+let moderated = products.map(moderatedReview)
+console.log(moderated)
+console.log(moderatedReview)
 // sample output
+
 // [
 //   {
 //     id: 101,
