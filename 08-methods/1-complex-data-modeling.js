@@ -60,7 +60,7 @@ let products = [
       {
         id: 2,
         user: "Zubair",
-        rating: 4.5,
+        rating: 4.6,
         title: "Very Good Product",
         comments: "zubair It is a very good product ....",
         date: "05-02-2021",
@@ -147,18 +147,27 @@ let ave = products.map(aveRatings)
 
 // 4- In each product show reviews that need to be moderated (status = false) along with id and title only
 // meanseach product will have id, title and array of unmoderated reviews.
+let moderatedReviewsArr = [];
 let moderatedReview = (product)=>{
   // console.log(product)
   product.reviews.forEach(elem =>{
     if(!elem.status){
-     return {elem.id,title, reviews}
+     moderatedReviewsArr.push(elem)
     }
   })
  
 }
 let moderated = products.map(moderatedReview)
 console.log(moderated)
-console.log(moderatedReview)
+console.log(moderatedReviewsArr)
+let newArr = products.map(product => ({
+  id : product.id,
+  title : product.title,
+  unModeratedReviews : product.reviews
+  .filter(review => !review.status).
+  map(review => ({id :review.id, title : review.title, review: review}))
+}))
+console.log(newArr)
 // sample output
 
 // [
