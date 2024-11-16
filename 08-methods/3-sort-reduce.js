@@ -54,9 +54,13 @@ let products = [
 // 1- Add 16% tax on each product price and then offer 10% discount on price.
 
 
+
 // 2- Show all the LED whose price is in the range of 30K to 40K.
-
-
+let priceRange = products.filter(item => { if(item.price >= 30000 && item.price <= 40000){
+  return item;
+}
+})
+console.log(priceRange)
 // 3- Find the sum of all products whose price is odd number using reduce function. 
 
 
