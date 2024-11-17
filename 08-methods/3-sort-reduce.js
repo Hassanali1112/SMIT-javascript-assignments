@@ -52,6 +52,10 @@ let products = [
 ]
 
 // 1- Add 16% tax on each product price and then offer 10% discount on price.
+let pricesWithTax = products.map(item => item.price + (item.price * .16))
+let discountedPrises = pricesWithTax.map(price => price - (price * .10))
+console.log(pricesWithTax)
+console.log(discountedPrises)
 
 
 
