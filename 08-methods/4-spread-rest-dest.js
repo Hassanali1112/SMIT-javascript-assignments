@@ -18,20 +18,28 @@ console.log(product2)
 
 // 2- Destucture title & price of product1 and the remaining properties in others object.
 
-let{title,price} = product1;
-console.log(price)
+let{title,price, ...others} = product1;
+console.log(others)
 
 
 // 3- Add some two properties in product1 dynamically.
-let product3 =  {...product1,date : new Date("13 aug,2024"),
-    color : "gray",
-}
-console.log(product3)
+product1.date = new Date("13 aug,2024");
+product1.color = "gray";
+
+console.log(product1)
 
 
 // 4- increase all number type properties of product1 by 10% using map.
+// self approach
 product1.price = product1.price + (product1.price * .10);
 product1.id = product1.id + (product1.id * .10);
 product1.quantity =  product1.quantity + (product1.quantity * .10 )
 console.log(product1)
 
+// chatgpt 
+Object.entries(product1).map(([key,value]) =>{
+    if(typeof value === "number"){
+        product1[key] = value * 1.10
+    }
+})
+console.log(product1)
