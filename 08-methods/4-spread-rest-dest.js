@@ -23,6 +23,10 @@ console.log(price)
 
 
 // 3- Add some two properties in product1 dynamically.
+let product3 =  {...product1,date : new Date("13 aug,2024"),
+    color : "gray",
+}
+console.log(product3)
 
 
 // 4- increase all number type properties of product1 by 10% using map.
