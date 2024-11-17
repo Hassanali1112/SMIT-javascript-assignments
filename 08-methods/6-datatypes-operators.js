@@ -86,3 +86,5 @@ let product = [
 ];
 
 // 1- Show all the products having color property using operator.
+let productWithColorProperty = product.filter(item => item.color ? item.color : false );
+console.log(productWithColorProperty.forEach(item => console.log(item.color)))
