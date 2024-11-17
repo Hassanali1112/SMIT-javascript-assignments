@@ -9,7 +9,10 @@ let product1 = {
 };
 
 // 1- Copy all the properties of product1 into product2 and change the price & status. 
-
+let product2 = {...product1}
+product2.price = 55000;
+product2.status = false;
+console.log(product2)
 
 // 2- Destucture title & price of product1 and the remaining properties in others object.
 
