@@ -30,4 +30,8 @@ console.log(product3)
 
 
 // 4- increase all number type properties of product1 by 10% using map.
+product1.price = product1.price + (product1.price * .10);
+product1.id = product1.id + (product1.id * .10);
+product1.quantity =  product1.quantity + (product1.quantity * .10 )
+console.log(product1)
 
