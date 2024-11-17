@@ -60,7 +60,7 @@ let priceRange = products.filter(item => { if(item.price >= 30000 && item.price 
   return item;
 }
 })
-console.log(priceRange)
+// console.log(priceRange)
 // 3- Find the sum of all products whose price is odd number using reduce function. 
-
-
+let itemWithOddPrice = products.filter(item => ((item.price % 2 ) === 0)).map(item => item.price  ).reduce((acc,currval)=> acc + currval,0)
+console.log(itemWithOddPrice)
