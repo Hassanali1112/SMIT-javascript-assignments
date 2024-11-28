@@ -111,7 +111,7 @@ var watches = {
         category: "Women's Watch",
         color: "golden",
         Tags: "38.5mm Rose Gold-Manual Winding",
-        img: "https://www.aviandco.com/media/catalog/product/cache/1201d8f17a9a86053a029ae3179a3cfc/a/u/audemars-piguet-royal-oak-15412ba-001-1.jpg",
+        img: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQnrRUjeMMnbWVaRQaRXyB4jiG21ZSX6LWRDw&s",
       },
       AudemarsPiguet46: {
         name: "Audemars Piguet 46",
@@ -124,7 +124,7 @@ var watches = {
         category: "Men's Watch",
         color: [, "golden", "silver"],
         Tags: "126231-62801, Automatic, certified pre-owned, Datejust 36, Datejust 36 Men, Rolex, watch",
-        img: "https://www.aviandco.com/media/catalog/product/cache/82bcb559010dcd84bc6a2f8c2fdad6e6/2/6/26238or-001_1.jpg",
+        img: "https://iwc.com.pk/wp-content/uploads/2022/05/Rolex-14.jpg",
       },
       AudemarsPiguet28: {
         name: "Audemars Piguet 28",
@@ -136,7 +136,7 @@ var watches = {
         category: "Men's Watch",
         color: [, "golden", "silver"],
         Tags: "126231-62801, Automatic, certified pre-owned, Datejust 36, Datejust 36 Men, Rolex, watch",
-        img: "https://www.aviandco.com/media/catalog/product/cache/1201d8f17a9a86053a029ae3179a3cfc/1/5/15720st_green.jpg",
+        img: "https://cdn-jnbkl.nitrocdn.com/DSyXimFVbLZsDRQHgxpswYJEIlNbdghE/assets/images/optimized/rev-51d486a/luxurysouq.com/wp-content/webp-express/webp-images/doc-root/wp-content/uploads/2023/07/126231-CHOJDJ-1.jpg.webp",
       },
       JumboThin: {
         name: "Jumbo Thin",
@@ -148,7 +148,7 @@ var watches = {
         category: "Men's Watch",
         color: [, "golden", "silver"],
         Tags: "126231-62801, Automatic, certified pre-owned, Datejust 36, Datejust 36 Men, Rolex, watch",
-        img: "https://www.aviandco.com/media/catalog/product/cache/1201d8f17a9a86053a029ae3179a3cfc/a/p/ap_royal_oak_26331or_blue-1_1_1.jpg",
+        img: "https://i.ebayimg.com/thumbs/images/g/e8MAAOSwwxBnCtXX/s-l1200.jpg",
       },
       AudemarsOyster: {
         name: "Audemars  Oyster",
@@ -301,8 +301,9 @@ var watches = {
 //   functionality for rolex
 let rolex = document.querySelector("#selectedRolex");
 let rolexbtn = document.querySelector("#rolexbtn")
+let rolexCard = document.querySelector(".rolexCard")
 let rolexModel;
-let rolexModelToList;
+let rolexModelToList = null;
 
 for(let brand in watches.ROLEX){
     rolex.innerHTML += `
@@ -319,10 +320,30 @@ rolexbtn.addEventListener("click",()=>{
             console.log(rolexModelToList)
         }
     }
+    if(rolexModelToList !== null){
+      rolexCard.classList.remove("d-none")
+      rolexCard.innerHTML = `
+      <img src="${rolexModelToList.img}" class="card-img-top" id="audiimg"  alt="...">
+                <div class="card-body">
+                  <h5 class="card-title audi-name">Model Name : ${rolexModelToList.name}</h5>
+                  <p class="card-text audi-disc f-6 lead">Discription of Model : ${rolexModelToList.caption} </p>
+                  <h5 class="catagory">Catagory : ${rolexModelToList.category}</h5>
+                  <h5 class="price">Price : ${rolexModelToList.price}</h5>
+                  <a href="#" class="btn btn-primary">Buy Now</a>
+      `
+      rolexModelToList = null;
+    } else {
+      alert("kindly select model")
+    }
 })
 
 // functionality for audi
+let audiCard = document.querySelector(".audiCard");
 let audi = document.querySelector("#selectAudi");
+let audibtn = document.querySelector("#audibtn");
+let audiModel;
+let audiModelToList = null;
+
 
 for(let brand in watches.AUDI){
     audi.innerHTML += `
@@ -330,11 +351,40 @@ for(let brand in watches.AUDI){
     `
 }
 audi.addEventListener("change",()=>{
-    console.log(event.target.value)
+    audiModel = event.target.value;
+
+});
+
+audibtn.addEventListener("click",()=>{
+  for(let model in watches.AUDI){
+    if(watches.AUDI[model].name === audiModel){
+      audiModelToList = watches.AUDI[model];
+    }
+  }
+if(audiModelToList !== null){
+  audiCard.classList.remove("d-none")
+  audiCard.innerHTML = `
+  <img src="${audiModelToList.img}" class="card-img-top"  alt="...">
+            <div class="card-body">
+              <h5 class="card-title audi-name">Model Name : ${audiModelToList.name}</h5>
+              <p class="card-text audi-disc f-6 lead">Discription of Model : ${audiModelToList.caption} </p>
+              <h5 class="catagory">Catagory : ${audiModelToList.category}</h5>
+              <h5 class="price">Price : ${audiModelToList.price}</h5>
+              <a href="#" class="btn btn-primary">Buy Now</a>
+  `
+  audiModelToList = null;
+} else {
+  alert("kindly select model")
+}
+ 
 })
 
 // functionality for gshock
+let gshockCard = document.querySelector(".gshockCard");
 let gshock = document.querySelector("#selectGshock");
+let gshockbtn = document.querySelector("#gshockbtn");
+let gshockModel;
+let gshockModelToList = null;
 
 for(let brand in watches.GShock){
     gshock.innerHTML += `
@@ -342,5 +392,30 @@ for(let brand in watches.GShock){
     `
 }
 gshock.addEventListener("change",()=>{
-    console.log(event.target.value)
+    gshockModel = event.target.value;
+    console.log(gshockModel)
+})
+
+gshockbtn.addEventListener("click", ()=>{
+  for(let model in watches.GShock){
+    if( watches.GShock[model].name === gshockModel){
+      gshockModelToList = watches.GShock[model];
+    
+    }
+  }
+  if(gshockModelToList !== null){
+    gshockCard.classList.remove("d-none")
+    gshockCard.innerHTML = `
+    <img src="${gshockModelToList.img}" class="card-img-top"   alt="...">
+            <div class="card-body">
+              <h5 class="card-title audi-name">Model Name : ${gshockModelToList.name}</h5>
+              <p class="card-text audi-disc f-6 lead">Discription of Model : ${gshockModelToList.caption} </p>
+              <h5 class="catagory">Catagory : ${gshockModelToList.category}</h5>
+              <h5 class="price">Price : ${gshockModelToList.price}</h5>
+              <a href="#" class="btn btn-primary">Buy Now</a>
+    `
+    gshockModelToList = null;
+  } else{
+    alert("kindly select model")
+  }
 })
