@@ -7,28 +7,50 @@
     <link rel="stylesheet" href="quiz.css" />
   </head>
   <body>
-    <div class="quiz-container">
-        <h3 class="question"> question goes here</h3>
-        <ul>
-            <li>
-                <input type="radio" name="option" id="option1">
-                <label for="option1">some option goes here</label>
-            </li>
-            <li>
-                <input type="radio" name="option" id="option2">
-                <label for="option2">some option goes here</label>
-            </li>
-            <li>
-                <input type="radio" name="option" id="option3">
-                <label for="option3">some option goes here</label>
-            </li>
-            <li>
-                <input type="radio" name="option" id="option4">
-                <label for="option4">some option goes here</label>
-            </li>
-        </ul>
-        <button class="nextBtn">Next Question</button>
+    <div class="top-section">
+      <div class="logo"><span>M</span>r. <span>B</span>rain</div>
+      <div class="right-part">
+        <div class="results">Results</div>
+        <h4 id="user-name">name goes here</h4>
+      </div>
     </div>
-    <div class="result-container"></div>
+    <div class="quiz-container">
+      <h3 class="question">question goes here</h3>
+      <ul>
+        <li>
+          <input type="radio" name="option" id="option1" />
+          <label id="label1" for="option1">some option goes here</label>
+        </li>
+        <li>
+          <input type="radio" name="option" id="option2" />
+          <label id="label2" for="option2">some option goes here</label>
+        </li>
+        <li>
+          <input type="radio" name="option" id="option3" />
+          <label id="label3" for="option3">some option goes here</label>
+        </li>
+        <li>
+          <input type="radio" name="option" id="option4" />
+          <label id="label4" for="option4">some option goes here</label>
+        </li>
+      </ul>
+      <button class="nextBtn">Next Question</button>
+    </div>
+    <div class="result-container">
+      <h4 class="resulMessage">kkkk</h4>
+      <table class="result-table">
+        <tr>
+          <td>Total Question :</td>
+          <td class="totalQues">3333</td>
+        </tr>
+        <tr>
+          <td>Correct Questions :</td>
+          <td class="correctQues">fffff</td>
+        </tr>
+      </table>
+      <h5 class="percentage">60%</h5>
+    </div>
+    <script src="mainQuiz.js"></script>
+    <script src="quiz.js"></script>
   </body>
 </html>
