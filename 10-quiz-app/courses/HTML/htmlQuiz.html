@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTML5 Quiz</title>
+    <link rel="stylesheet" href="htmlQuiz.css">
+    <link rel="stylesheet" href="../../topbar.css">
+    <!-- bootstrap css cdn -->
+   <link
+     href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+     rel="stylesheet"
+     integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
+     crossorigin="anonymous"
+   />
+   <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+</head>
+<body>
+  <div class="top-section">
+    <div class="logo">
+      <img src="../../logo/205744585-removebg-preview.png" alt="" />
+    </div>
+    <div class="version  d-flex gap-2 align-items-center me-4">
+      <div class="form-check form-switch">
+        <input class="form-check-input mode" type="checkbox" id="flexSwitchCheckDefault" />
+      </div>
+      <h6>V O.1 Beta</h6>
+      <button class="logout btn-danger">logout</button>
+    </div>
+  </div>
+  <div class="container mt-5">
+    <div class="row justify-content-center">
+      <div class="quiz-container col-lg-12 h-100 p-4">
+        <h3 class="question">question goes here</h3>
+        <ul class="p-0">
+          <li>
+            <input type="radio" name="option" id="option1" />
+            <label id="label1" for="option1">some option goes here</label>
+          </li>
+          <li>
+            <input type="radio" name="option" id="option2" />
+            <label id="label2" for="option2">some option goes here</label>
+          </li>
+          <li>
+            <input type="radio" name="option" id="option3" />
+            <label id="label3" for="option3">some option goes here</label>
+          </li>
+          <li>
+            <input type="radio" name="option" id="option4" />
+            <label id="label4" for="option4">some option goes here</label>
+          </li>
+        </ul>
+        <button class="nextBtn">Next Question</button>
+      </div>
+      <div class="result-container col-lg-12 h-100 p-4">
+        <h4 class="resulMessage">kkkk</h4>
+        <table class="result-table">
+          <tr>
+            <td>Total Question :</td>
+            <td class="totalQues">3333</td>
+          </tr>
+          <tr>
+            <td>Correct Questions :</td>
+            <td class="correctQues">fffff</td>
+          </tr>
+        </table>
+        <h5 class="percentage">60%</h5>
+      </div>
+    </div>
+  </div>
+     
+
+      <script>
+        let logo = document.querySelector(".logo");
+        logo.addEventListener("click", () => {
+            let isLoggedIn = localStorage.getItem("isLoggedIn")
+          if (isLoggedIn === "true") {
+            window.location.assign("../subject.html")
+          } else {
+            location.assign("../../index.html");
+          }
+        });
+      </script>
+      <script src="../../topbar.js"></script>
+
+    <script src="htmlQuiz.js"></script>
+    <script
+    src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+    crossorigin="anonymous"
+  ></script>
+  
+
+</body>
+</html>

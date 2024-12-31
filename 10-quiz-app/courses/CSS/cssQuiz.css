@@ -1,0 +1,131 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: sans-serif;
+}
+body{
+    
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: #C2FFC7;
+}
+.top-section{
+    width: 100%;
+    height: 80px;
+    padding: 0 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: rgb(68, 156, 109);
+    color: white;
+    font-size: 1rem;
+}
+.logo{
+    cursor: pointer;
+}
+.logo span{
+    font-size: 2.5rem;
+}
+.right-part{
+    display: flex;
+    column-gap: 1rem;
+}
+.quiz-container{
+    padding: 20px 30px 20px 40px;
+    width: 500px;
+    height: 350px;
+    border: 1px solid black;
+    display: flex;
+    flex-direction: column;
+    gap: 1.3rem;
+    margin: 80px 0;
+    align-items: center;
+    justify-content: space-between;
+    border-radius: 8px;
+    overflow: hidden;
+    background-color: #a6ee76;
+}
+.question{
+    font-size: 1.2rem;
+    border: 1px solid rgb(51, 50, 50);
+    width: 100%;
+    padding: .8rem;
+}
+ul{
+    width: 100%;
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: .7rem;
+}
+li{
+    display: flex;
+    align-items: center;
+    gap: .5rem;
+    font-size: 1rem;
+    text-transform: capitalize;
+    border: 1px solid rgb(51, 50, 50);
+    width: 100%;
+    padding: .3rem;
+}
+.nextBtn{
+    border: none;
+    width: 100%;
+    padding: 10px;
+    text-transform: capitalize;
+    font-weight: 500;
+    background-color: #41ab5d;
+    border: none;
+    cursor: pointer;
+    font-size: 1.1rem;
+}
+.result-container{
+    padding: 40px 40px 0px 40px;
+    width: 500px;
+    height: 350px;
+    border: 1px solid black;
+    display: flex;
+    flex-direction: column;
+    gap: 1.3rem;
+    margin: 80px 0;
+    align-items: center;
+    /* justify-content: center; */
+    border-radius: 8px;
+    overflow: hidden;
+    background-color: #a6ee76;
+    display: none;
+    color: #1d1c1c;
+}
+.result-table{
+    width: 100%;
+    font-size: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 3rem;
+}
+.result-table tr{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+.resulMessage{
+    font-size: 1.6rem;
+    border-bottom: 1px solid black;
+    width: 100%;
+    text-align: center;
+    padding-bottom: .7rem;
+}
+
+.percentage{
+    width: 100px;
+    height: 100px;
+    border: 1px solid black;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 2rem;
+}
